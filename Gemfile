@@ -12,6 +12,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
