@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
+
   devise_for :users
-
-  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
-
   devise_scope :user do
-    root to: "devise/sessions#new"
+    authenticated :user do
+      root to: 'dashboard#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root to: 'devise/sessions#new', as: :unauthenticated_root
+    end
   end
 end

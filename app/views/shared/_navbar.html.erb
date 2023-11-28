@@ -24,37 +24,37 @@
 
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/ios/25/FFFFFF/engineering.png" alt="engineering" />
-                <%= link_to 'Account settings', dashboard_path, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Account settings', authenticated_root_path, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
               
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/ios/25/FFFFFF/marker.png" alt="marker"/>
-                <%= link_to 'Merchant finder', dashboard_path, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Merchant finder', authenticated_root_path, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
 
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/ios-filled/25/FFFFFF/gift.png" alt="gift"/>
-                <%= link_to 'Claim promo', dashboard_path, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Claim promo', authenticated_root_path, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
 
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/glyph-neue/25/FFFFFF/share-2--v1.png" alt="share-2--v1"/>
-                <%= link_to 'Share promo', dashboard_path, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Share promo', authenticated_root_path, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
 
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/25/FFFFFF/external-dashboard-blogger-vitaliy-gorbachev-fill-vitaly-gorbachev.png" alt="external-dashboard-blogger-vitaliy-gorbachev-fill-vitaly-gorbachev"/>
-                <%= link_to 'Dashboard', dashboard_path, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Dashboard', authenticated_root_path, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
 
               <li class="d-flex align-items-center nav-item">
                 <img src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/FFFFFF/external-sign-out-user-interface-tanah-basah-detailed-outline-tanah-basah.png" alt="external-sign-out-user-interface-tanah-basah-detailed-outline-tanah-basah"/>
-                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link text-white mx-3' %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, 'data-turbo-method': :delete, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
             <% else %>
