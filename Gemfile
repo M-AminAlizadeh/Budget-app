@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 gem 'bootsnap', require: false
+gem 'devise'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg'
@@ -12,7 +13,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'devise'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
