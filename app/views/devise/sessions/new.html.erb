@@ -1,23 +1,18 @@
-<div class="container mt-5">
+<div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      <h2 class="mb-4">Sign In</h2>
-
-      <%= render 'devise/shared/error_messages', resource: resource %>
-
+    <%= render 'shared/login_navbar' %>
+    <div class="col-md-6 p-0">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'needs-validation', novalidate: true, data: { turbo: false } }) do |f| %>
-        <div class="mb-3">
-          <%= f.label :email, class: 'form-label' %>
-          <%= f.email_field :email, class: 'form-control', required: true %>
+      <div>
+          <%= f.email_field :email, class: 'form-control', required: true, placeholder: "Email" %>
         </div>
 
-        <div class="mb-3">
-          <%= f.label :password, class: 'form-label' %>
-          <%= f.password_field :password, class: 'form-control', required: true %>
+        <div>
+          <%= f.password_field :password, class: 'form-control', required: true, placeholder: "password" %>
         </div>
 
-        <div class="mb-3">
-          <%= f.submit 'Log in', class: 'btn btn-primary', data: { turbo: false }  %>
+        <div class="mt-2 text-center">
+          <%= link_to "Forgot password?", new_user_password_path, class: 'text-secondary text-decoration-none' %>
         </div>
       <% end %>
     </div>

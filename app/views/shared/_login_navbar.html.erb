@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light background-color-primary">
+  <div class="container-fluid">
+    <a href='/'>
+      <img src="https://img.icons8.com/sf-black/35/ffffff/back.png" alt="back"/>
+    </a>
+
+    <span class='text-uppercase fs-5 text-light'>login</span>
+
+    <%= button_to 'Log in', session_path(resource_name), method: :post, class: 'btn btn-link text-light text-decoration-none text-capitalize', data: { turbo: false } %>
+  </div>
+</nav>
