@@ -57,13 +57,6 @@
                 <%= link_to 'Sign out', destroy_user_session_path, method: :delete, 'data-turbo-method': :delete, class: 'nav-link text-white mx-3' %>
               </li>
               <hr class=" custom-border">
-            <% else %>
-              <li class="nav-item">
-                <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-white' %>
-              </li>
-              <li class="nav-item">
-                <%= link_to 'Sign in', new_user_session_path, class: 'nav-link text-white' %>
-              </li>
             <% end %>
           </ul>
         </div>

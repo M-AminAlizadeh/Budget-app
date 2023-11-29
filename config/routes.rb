@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       root to: 'splash#index', as: :unauthenticated_root
     end
   end
+
+  resources :categories, only: [:new, :create, :index]
 end

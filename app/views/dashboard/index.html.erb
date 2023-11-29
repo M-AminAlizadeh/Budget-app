@@ -1,2 +1,10 @@
-dashboard
-<%= link_to 'Log-out', destroy_user_session_path, method: :delete, 'data-turbo-method': :delete, class: "nav-link" %>
+<%= render 'navbar' %>
+
+<br/><br/>
+<%= link_to "Add New Category", new_category_path, class: 'btn btn-primary' %>
+
+<br/><br/>
+<h2>Categories</h2>
+<% @categories.each do |category| %>
+  <p><%= category.name %> - <%= category.icon_url %></p>
+<% end %>
