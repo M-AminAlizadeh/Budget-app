@@ -1,4 +1,4 @@
-<h1>Add New Category</h1>
+<%= render 'add_category_navbar' %>
 
 <%= form_with(model: @category, url: categories_path, method: :post) do |form| %>
   <div class="form-group">
