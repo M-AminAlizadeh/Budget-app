@@ -1,10 +1,7 @@
 <%= render 'navbar' %>
 
-<br/><br/>
-<%= link_to "Add New Category", new_category_path, class: 'btn btn-primary' %>
+<%= render 'categories_list' %>
 
-<br/><br/>
-<h2>Categories</h2>
-<% @categories.each do |category| %>
-  <p><%= category.name %> - <%= category.icon_url %></p>
-<% end %>
+<div class="fixed-bottom p-3 border background-color-secondary">
+  <%= link_to "Add Category", new_category_path, class: 'btn background-color-secondary text-light text-uppercase border w-100 p-3 fw-bold' %>
+</div>
