@@ -23,3 +23,11 @@
   margin: 0;
   margin-left: 2.6rem;
 }
+
+.categories-list {
+  height: 85vh;
+}
+
+.background-light-dark {
+  background-color: #ccc;
+}
