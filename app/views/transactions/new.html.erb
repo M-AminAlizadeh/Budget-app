@@ -11,12 +11,7 @@
 
   <div class="form-group">
     <%= form.label :category_ids, "Categories" %>
-    <% @categories.each do |category| %>
-      <div class="form-check">
-        <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
-        <%= form.label category.name, class: 'form-check-label' %>
-      </div>
-    <% end %>
+
   </div>
 
   <div class="form-group fixed-bottom p-3 border background-color-secondary">
