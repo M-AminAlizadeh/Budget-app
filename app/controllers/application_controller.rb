@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    unless devise_controller? || (controller_name == 'splash' && action_name == 'index')
-      super
-    end
+    return if devise_controller? || (controller_name == 'splash' && action_name == 'index')
+
+    super
   end
 end
