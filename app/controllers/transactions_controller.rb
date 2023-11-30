@@ -6,7 +6,7 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-  
+
     if @transaction.save
       redirect_to authenticated_root_path, notice: 'Transaction was successfully created.'
     else
