@@ -1,0 +1,71 @@
+<div data-turbo-frame="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light background-color-primary">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+      <div class="d-flex align-items-center justify-content-between w-100">
+        <%= link_to category_transactions_path(@category) do %>
+          <img src="https://img.icons8.com/sf-black/35/ffffff/back.png" alt="back"/>
+        <% end %>
+        <h1 class='text-uppercase text-white fs-4 fw-bold'>New Transaction</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/menu--v1.png" alt="Menu Icon">
+        </button>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+        <div class="offcanvas-header background-color-primary">
+          <h5 class="offcanvas-title" id="navbarNavLabel"></h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+          </button>
+        </div>
+        <div class="offcanvas-body background-color-primary">
+          <ul class="navbar-nav">
+            <% if user_signed_in? %>
+              <li class="d-flex flex-column align-items-center nav-item mb-3">
+                <img src="https://img.icons8.com/pastel-glyph/100/FFFFFF/person-male--v2.png" alt="person-male--v2"/>
+                <span class='text-capitalize text-white'><%= current_user.name %></span>
+              </li>
+
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/ios/25/FFFFFF/engineering.png" alt="engineering" />
+                <%= link_to 'Account settings', authenticated_root_path, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+              
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/ios/25/FFFFFF/marker.png" alt="marker"/>
+                <%= link_to 'Merchant finder', authenticated_root_path, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/ios-filled/25/FFFFFF/gift.png" alt="gift"/>
+                <%= link_to 'Claim promo', authenticated_root_path, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/glyph-neue/25/FFFFFF/share-2--v1.png" alt="share-2--v1"/>
+                <%= link_to 'Share promo', authenticated_root_path, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/25/FFFFFF/external-dashboard-blogger-vitaliy-gorbachev-fill-vitaly-gorbachev.png" alt="external-dashboard-blogger-vitaliy-gorbachev-fill-vitaly-gorbachev"/>
+                <%= link_to 'Dashboard', authenticated_root_path, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+
+              <li class="d-flex align-items-center nav-item">
+                <img src="https://img.icons8.com/external-tanah-basah-detailed-outline-tanah-basah/25/FFFFFF/external-sign-out-user-interface-tanah-basah-detailed-outline-tanah-basah.png" alt="external-sign-out-user-interface-tanah-basah-detailed-outline-tanah-basah"/>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, 'data-turbo-method': :delete, class: 'nav-link text-white mx-3' %>
+              </li>
+              <hr class=" custom-border">
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
