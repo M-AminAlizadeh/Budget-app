@@ -4,4 +4,7 @@ class Transaction < ApplicationRecord
 
   attribute :name, :string
   attribute :amount, :decimal
+
+  validates :name, presence: true
+  validates :amount, presence: true
 end

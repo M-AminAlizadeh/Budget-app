@@ -1,0 +1,18 @@
+<h1>Transactions for <%= @category.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td><%= transaction.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

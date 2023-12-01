@@ -17,6 +17,11 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show_transactions
+    @category = Category.find(params[:id])
+    @transactions = @category.transactions
+  end
+
   private
 
   def category_params
