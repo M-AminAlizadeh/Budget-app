@@ -1,1 +1,29 @@
 <%= render 'transaction_form_navbar' %>
+
+<%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :amount, class: "form-label" %>
+    <%= form.number_field :amount, class: "form-control", min: 0 %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label "CATEGORIES", class: "form-label" %>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |category_form| %>
+    <div class="form-check">
+      <%= category_form.check_box class: "form-check-input" %>
+      <%= category_form.label class: "form-check-label" %>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class="mb-3 fw-6">
+    * if you can't find your category click this <%= link_to "Add Category", new_category_path %> to add it!
+  </div>
+
+  <%= form.submit "Save", class: "w-100 fixed-bottom p-3 border background-color-secondary text-white text-uppercase fw-bold fs-5" %>
+<% end %>
