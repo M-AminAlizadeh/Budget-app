@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :set_category, only: [:new, :create]
+  before_action :set_category, only: [:new, :create, :index]
 
   def new
     @transaction = Transaction.new
@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.all
+    @transactions = @category.transactions
   end
 
   def create
@@ -29,7 +29,7 @@ class TransactionsController < ApplicationController
   private
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:category_id])
   end
 
   def transaction_params
