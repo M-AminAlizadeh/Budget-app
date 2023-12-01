@@ -1,11 +1,13 @@
 class TransactionsController < ApplicationController
-  def index
-    @transactions = Transaction.all
-  end
+  before_action :set_category, only: [:new, :create]
 
   def new
     @transaction = Transaction.new
     @categories = Category.all
+  end
+
+  def index
+    @transactions = Transaction.all
   end
 
   def create
@@ -19,7 +21,16 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def transactions
+    @category = Category.find(params[:id])
+    @transactions = @category.transactions
+  end
+
   private
+
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
   def transaction_params
     params.require(:transaction).permit(:name, :amount, category_ids: [])

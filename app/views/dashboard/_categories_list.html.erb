@@ -1,6 +1,6 @@
 <div class='d-flex flex-column categories-list mx-2'>
   <% @categories.each do |category| %>
-    <%= link_to show_transactions_category_path(category), class: 'text-decoration-none' do %>
+    <%= link_to category_transactions_path(category), class: 'text-decoration-none' do %>
       <div class='d-flex bg-light mt-3 p-2'>
         <div>
           <img width="60px" height="60px" src="<%= category.icon_url %>" />
