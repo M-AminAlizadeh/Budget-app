@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: [:new, :create, :index]
+  resources :categories, only: [:new, :create, :index] do
+    member do
+      get 'show_transactions'
+    end
+  end
   resources :transactions, only: [:new, :create, :index]
 end

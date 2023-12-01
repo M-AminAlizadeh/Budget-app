@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_30_100552) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_103412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,18 +23,18 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_100552) do
 
   create_table "categorizations", force: :cascade do |t|
     t.bigint "category_id", null: false
-    t.bigint "transaction_id", null: false
+    t.bigint "related_transaction_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_categorizations_on_category_id"
-    t.index ["transaction_id"], name: "index_categorizations_on_transaction_id"
+    t.index ["related_transaction_id"], name: "index_categorizations_on_related_transaction_id"
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "name"
     t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,5 +51,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_100552) do
   end
 
   add_foreign_key "categorizations", "categories"
-  add_foreign_key "categorizations", "transactions"
+  add_foreign_key "categorizations", "transactions", column: "related_transaction_id"
 end
