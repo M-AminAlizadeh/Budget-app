@@ -1,0 +1,14 @@
+<div class="d-flex flex-column justify-content-between" style="min-height: 100vh;">
+  <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <h1>One Pocket</h1>
+  </div>
+  
+  <div class='d-flex flex-column mt-auto'>
+    <button type="button" class="btn btn-primary text-uppercase mb-3 mx-3 py-3">
+      <%= link_to 'log in', new_user_session_path, class: 'nav-link' %>
+    </button>
+    <button type="button" class="btn btn-light text-uppercase mb-3 mx-3 py-3">
+      <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+    </button>
+  </div>
+</div>

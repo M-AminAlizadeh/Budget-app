@@ -1,0 +1,9 @@
+<div class="background-light-dark">
+  <%= render 'navbar' %>
+  
+  <%= render partial: 'dashboard/categories_list', locals: { categories: @categories } %>
+  
+  <div class="fixed-bottom p-3 border background-color-secondary">
+    <%= link_to "Add Category", new_category_path, class: 'btn background-color-secondary text-light text-uppercase border w-100 p-3 fw-bold' %>
+  </div>
+</div>
