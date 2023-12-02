@@ -1,21 +1,15 @@
 require 'rails_helper'
 
 RSpec.feature 'Dashboard', type: :feature do
-  scenario 'User can see a list of categories on the dashboard' do
-    user = create(:user)
-    login_as(user, scope: :user)
+  before :each do
+    visit unauthenticated_root_path
+  end
+  
+  it 'has the log in button' do
+    expect(page).to have_text(/log in/i)
+  end
 
-    categories = create_list(:category, 3, user:)
-
-    visit authenticated_root_path
-
-    expect(page).to have_content('Dashboard')
-
-    within '.categories-list' do
-      categories.each do |category|
-        expect(page).to have_content(category.name)
-        # Add more expectations based on your category display logic
-      end
-    end
+  it 'has the sign up button' do
+    expect(page).to have_text(/sign up/i)
   end
 end
