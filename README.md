@@ -23,6 +23,8 @@
 
 **[Budget-app]** is a app specially designed for mobile devices and let users to track there transaction on specific categories.
 
+For more info just check this [video](https://bas.nl.tab.digital/s/FnsqHXiFq7Z5o3C)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
