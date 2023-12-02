@@ -7,8 +7,8 @@ class EntriesController < ApplicationController
   end
 
   def index
-    @entries = Entry.all
     @category = Category.find(params[:category_id])
+    @entries = @category.entries.order(created_at: :desc)
   end
 
   def create
@@ -26,6 +26,6 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:name, :amount)
+    params.require(:entry).permit(:name, :amount, category_ids: [])
   end
 end
