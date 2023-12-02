@@ -145,8 +145,6 @@ Open [http://localhost:1080](http://localhost:1080) to view it in your browser.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
 - [ ] **[Desktop version]**
 - [ ] **[Add all CRUD to categories & transactions]**
 - [ ] **[Tag]**
@@ -167,7 +165,7 @@ Feel free to check the [issues page](https://github.com/M-AminAlizadeh/Budget-ap
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> 
+
 If you like this project, Give it a star, and check out more of our work.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -176,7 +174,6 @@ If you like this project, Give it a star, and check out more of our work.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> 
 We would like to thank Microverse for Providing such a motivating and wonderfully diverse learning environment.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
