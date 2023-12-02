@@ -24,8 +24,8 @@ group :development do
 end
 
 group :test do
+  gem 'cancancan'
   gem 'capybara'
   gem 'rspec-rails'
-  gem 'cancancan'
   gem 'selenium-webdriver'
 end

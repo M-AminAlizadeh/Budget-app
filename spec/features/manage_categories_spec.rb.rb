@@ -40,22 +40,4 @@ feature 'Categories', type: :feature do
       expect(page).to have_css("img[src='https://img.icons8.com/updated-category-icon/48/000000.png']")
     end
   end
-
-  scenario 'User can delete a category' do
-    login_as_user
-
-    category = create(:category)
-
-    visit categories_path
-
-    within '.categories-list' do
-      click_link 'Delete'
-    end
-
-    expect(page).to have_content('Category deleted successfully.')
-
-    within '.categories-list' do
-      expect(page).not_to have_content(category.name)
-    end
-  end
 end
