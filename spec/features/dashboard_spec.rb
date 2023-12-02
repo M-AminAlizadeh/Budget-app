@@ -4,7 +4,7 @@ RSpec.feature 'Dashboard', type: :feature do
   before :each do
     visit unauthenticated_root_path
   end
-  
+
   it 'has the log in button' do
     expect(page).to have_text(/log in/i)
   end
