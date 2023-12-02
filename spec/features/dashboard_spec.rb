@@ -2,11 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'Dashboard', type: :feature do
   scenario 'User can see a list of categories on the dashboard' do
-
     user = create(:user)
     login_as(user, scope: :user)
 
-    categories = create_list(:category, 3, user: user)
+    categories = create_list(:category, 3, user:)
 
     visit authenticated_root_path
 
