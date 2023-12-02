@@ -17,7 +17,6 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -26,5 +25,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'rspec-rails'
+  gem 'cancancan'
   gem 'selenium-webdriver'
 end
