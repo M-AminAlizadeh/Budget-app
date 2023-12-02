@@ -1,17 +1,19 @@
 <div class='d-flex flex-column categories-list mx-2'>
   <% @categories.each do |category| %>
-    <div class='d-flex bg-light mt-3 p-2'>
-      <div>
-        <img width="60px" height="60px" src="<%= category.icon_url %>" />
-      </div>
-
-      <div class='mx-3 flex-grow-1'>
-        <div class="d-flex justify-content-between">
-          <p><%= category.name %></p>
-          <span class='fw-bold'>$0.00</span>
+    <%= link_to category_entries_path(category), class: 'text-decoration-none' do %>
+      <div class='d-flex bg-light mt-3 p-2'>
+        <div>
+          <img width="60px" height="60px" src="<%= category.icon_url %>" />
         </div>
-        <span class='text-muted' style='font-size:12px;'><%= category.created_at.strftime('%d %b %Y') %></span>
+
+        <div class='mx-3 flex-grow-1'>
+          <div class="d-flex justify-content-between">
+            <p><%= category.name %></p>
+            <%= render partial: 'category_entry_sum', locals: { category: category } %>
+          </div>
+          <span class='text-muted' style='font-size:12px;'><%= category.created_at.strftime('%d %b %Y') %></span>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
