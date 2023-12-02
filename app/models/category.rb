@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :categorizations
-  has_many :transactions, through: :categorizations, source: :related_transaction
+  has_many :categories_entries
+  has_many :entries, through: :categories_entries
 end

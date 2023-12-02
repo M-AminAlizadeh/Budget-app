@@ -1,0 +1,13 @@
+<div class="background-light-dark">
+  <%= render 'transactions_list_navbar' %>
+  <%= render 'category_info' %>
+
+  <% @entries.each do |entry| %>
+    <p>Name: <%= entry.name %></p>
+    <p>Amount: <%= entry.amount %></p>
+  <% end %>
+
+  <div class="fixed-bottom p-3 border background-color-secondary">
+    <%= link_to "Add a new transaction", new_category_entry_path(category_id: @category.id), class: 'btn background-color-secondary text-light text-uppercase border w-100 p-3 fw-bold' %>
+  </div>
+</div>

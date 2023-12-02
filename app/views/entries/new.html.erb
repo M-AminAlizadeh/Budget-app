@@ -1,6 +1,6 @@
-<%= render 'transaction_form_navbar' %>
+<%= render 'transaction_form_navbar', category: @category %>
 
-<%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |form| %>
+<%= form_with(model: [@category, @entry], url: category_entries_path(@category), local: true, data: { turbo_action: "submit" }) do |form| %>
   <div class="mb-3">
     <%= form.label :name, class: "form-label" %>
     <%= form.text_field :name, class: "form-control", required: true, placeholder: 'Transaction Name' %>
